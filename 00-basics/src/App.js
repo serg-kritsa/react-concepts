@@ -8,6 +8,13 @@ class App extends Component {
       users: [{name: 'user1'}, {name: 'user2'}]
     };
   }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }
+
   title = 'Hello React';
   users = [];
 
