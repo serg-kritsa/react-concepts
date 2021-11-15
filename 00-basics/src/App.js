@@ -9,6 +9,7 @@ class App extends Component {
 
     this.state = {
       monsters: [],
+      searchField: ''
     };
   }
 
@@ -19,11 +20,12 @@ class App extends Component {
   }
 
   onSearchChange = event => {
-    console.log(event.target.value);
+    this.setState({ searchField: event.target.value });
   };
 
   render() {
-    const { monsters } = this.state;
+    const { monsters, searchField } = this.state;
+    console.log(searchField);
 
     return (
       <div>
