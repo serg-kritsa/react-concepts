@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { CardList } from './components/card-list/card-list.component';
+
 class App extends Component {
   constructor() {
     super();
@@ -22,9 +24,7 @@ class App extends Component {
     return (
       <div>
       <h1>Monsters Rolodex</h1>
-      {monsters.map(monster => (
-        <p>{monster.name}</p>
-      ))}
+        <CardList />
       </div>
     );
   }
