@@ -2,6 +2,8 @@ import React from 'react';
 
 export const CardList = props => (
   <div>
-    Hello from Component
+  {props.monsters.map(monster => (
+    <p>{monster.name}</p>
+  ))}
   </div>
 );
