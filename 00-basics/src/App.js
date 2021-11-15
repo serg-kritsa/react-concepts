@@ -5,18 +5,18 @@ class App extends Component {
     super();
 
     this.state = {
-      
+      users: [{name: 'user1'}, {name: 'user2'}]
     };
   }
   title = 'Hello React';
-  users = [{name: 'user1'}, {name: 'user2'}];
+  users = [];
 
   render() {
     const title = this.title;
     return (
       <div>
         <h1>{title}</h1>
-        {this.users.map(u => (
+        {this.state.users.map(u => (
           <p>{u.name}</p>
         ))}
       </div>
