@@ -18,7 +18,8 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
 
-  onSearchChange = () => {
+  onSearchChange = event => {
+    console.log(event.target.value);
   };
 
   render() {
