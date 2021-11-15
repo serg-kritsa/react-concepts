@@ -25,7 +25,9 @@ class App extends Component {
 
   render() {
     const { monsters, searchField } = this.state;
-    console.log(searchField);
+    const filteredMonsters = monsters.filter(monster =>
+      monster.name.includes(searchField)
+    );
 
     return (
       <div>
