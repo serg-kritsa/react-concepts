@@ -15,21 +15,19 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
 
-  title = 'Monsters Rolodex';
-  users = [];
 
   render() {
-    const title = this.title;
+    const { monsters } = this.state;
+
     return (
       <div>
-        <h1>{title}</h1>
-        {this.state.monsters.map(monster => (
-          <p>{monster.name}</p>
-        ))}
+      <h1>Monsters Rolodex</h1>
+      {monsters.map(monster => (
+        <p>{monster.name}</p>
+      ))}
       </div>
     );
   }
 }
 
 export default App;
-
