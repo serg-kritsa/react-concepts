@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CardList = () => (
+export const CardList = props => (
   <div>
     Hello from Component
   </div>

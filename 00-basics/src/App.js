@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div>
       <h1>Monsters Rolodex</h1>
-        <CardList />
+        <CardList monsters={monsters} />
       </div>
     );
   }
