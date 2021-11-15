@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div>
       <h1>Monsters Rolodex</h1>
+        <SearchBox />
         <CardList monsters={monsters} />
       </div>
     );
