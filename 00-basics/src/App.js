@@ -26,12 +26,12 @@ class App extends Component {
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster =>
-      monster.name.includes(searchField)
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
       <div>
-      <h1>Monsters Rolodex</h1>
+        <h1>Monsters Rolodex</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
         <CardList monsters={filteredMonsters} />
       </div>
