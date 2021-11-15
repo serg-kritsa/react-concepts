@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Card } from '../card/card.component';
+
 export const CardList = props => (
   <div>
   {props.monsters.map(monster => (
-    <p key={monster.id}>{monster.name}</p>
+    <Card key={monster.id} monster={monster} />
   ))}
   </div>
 );
