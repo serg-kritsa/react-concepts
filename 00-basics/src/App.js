@@ -18,6 +18,8 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
 
+  onSearchChange = () => {
+  };
 
   render() {
     const { monsters } = this.state;
@@ -25,7 +27,7 @@ class App extends Component {
     return (
       <div>
       <h1>Monsters Rolodex</h1>
-        <SearchBox />
+        <SearchBox onSearchChange={this.onSearchChange} />
         <CardList monsters={monsters} />
       </div>
     );

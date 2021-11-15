@@ -4,5 +4,6 @@ export const SearchBox = props => (
   <input
     type='text'
     placeholder='search monsters'
+    onChange={props.onSearchChange}
   />
 );
