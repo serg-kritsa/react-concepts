@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
+import SetStateDemo from './components/set-state-demo/set-state-demo.component';
 
 import './App.css';
 
@@ -33,6 +34,7 @@ class App extends Component {
 
     return (
       <div className='App'>
+        <SetStateDemo />
         <h1>Monsters Rolodex</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
         <CardList monsters={filteredMonsters} />
