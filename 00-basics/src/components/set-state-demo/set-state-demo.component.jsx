@@ -1,11 +1,12 @@
 import React from 'react';
 
 class SetStateDemo extends React.Component {
-  constructor() {
-    super();
+  // passed to use in constructor
+  constructor(props) {
+    super(props);
 
     this.state = {
-      counter: 0
+      counter: 0 + this.props.increment
     };
   }
 

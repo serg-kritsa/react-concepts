@@ -34,7 +34,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <SetStateDemo />
+        <SetStateDemo increment={1} />
         <h1>Monsters Rolodex</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
         <CardList monsters={filteredMonsters} />
