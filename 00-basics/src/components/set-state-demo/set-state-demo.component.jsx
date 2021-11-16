@@ -13,7 +13,7 @@ class SetStateDemo extends React.Component {
     //              executed second because of async
     //                                                                            executed first
     //            better way if previous state is needed because of inner optimization
-    this.setState((prevState, prevProp) => ({ counter: prevState.counter + this.props.increment }), console.log(this.state.counter));
+    this.setState((prevState, prevProp) => ({ counter: prevState.counter + prevProp.increment }), console.log(this.state.counter));
   };
 
   render() {
