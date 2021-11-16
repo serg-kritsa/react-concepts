@@ -15,11 +15,21 @@
   <script>
     // console.log(React);
     // console.log(ReactDOM);
+
+    const Person = () => {
+      return React.createElement(
+        "div", {}, React.createElement("h1", {}, "Person")
+      );
+    };
+
     const App = () => {
       return React.createElement(
         "div", // created tag
         {}, // tag attribute
-        React.createElement("h1", {}, "ELEMENT'S CONTENT")
+        [ // more than one in array
+          React.createElement("h1", {}, "ELEMENT'S CONTENT"), 
+          React.createElement(Person)
+        ]
       );
     };
     ReactDOM.render(
