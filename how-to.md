@@ -10,3 +10,11 @@ npm start
 - find link like `<link href="https://fonts.googleapis.com/css2?family="`<font-name>`"&display=swap" rel="stylesheet">` and copy it
 - insert in the head tag of `public/index.html`
 - apply font in css property like `font-family: '`<font-name>`';`
+
+## deploy app on github.io
+- push code to remote repository
+- `npm i gh-pages`
+- add `"homepage": "https://`<git-user-name>`.github.io/`<git-repo-name>`",` property to `package.json"` file  
+- add `"predeploy": "npm build",` property to ` script` section of `package.json` file  
+- add `"deploy": "gh-pages -d build",` property to ` script` section of `package.json` file  
+- `npm run deploy`
