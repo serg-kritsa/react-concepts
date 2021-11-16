@@ -11,8 +11,9 @@ class SetStateDemo extends React.Component {
 
   onClickHandler = () => {
     //              executed second because of async
-    //                                                  executed first
-    this.setState({ counter: this.state.counter + 1 }, console.log(this.state.counter));
+    //                                                                            executed first
+    //            better way if previous state is needed because of inner optimization
+    this.setState((prevState, prevProp) => ({ counter: prevState.counter + 1 }), console.log(this.state.counter));
   };
 
   render() {
