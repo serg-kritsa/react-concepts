@@ -18,3 +18,14 @@ npm start
 - add `"predeploy": "npm build",` property to ` script` section of `package.json` file  
 - add `"deploy": "gh-pages -d build",` property to ` script` section of `package.json` file  
 - `npm run deploy`
+
+## use lifecycle method right
+- mounting
+  constructor() > render() > updating DOM & refs by React > componentDidMount()
+- updating
+  received new props, forceUpdate()
+    render()
+  received new state
+    render() > updating DOM & refs by React
+- unmounting
+  componentWillUnmount()
