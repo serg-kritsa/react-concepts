@@ -50,3 +50,8 @@ Enable Google
 Enable Email/Password
 
 [https://firebase.google.com/docs/auth/web/password-auth?hl=en&authuser=0#web-version-9](link to signup/in docs)
+
+## Redux
+link to docs
+[https://redux.js.org/api/createstore]
+[https://redux.js.org/api/applymiddleware]
