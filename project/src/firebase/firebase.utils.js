@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "",
@@ -23,6 +23,10 @@ export const signInWithGoogle = async () => {
   // // This gives you a Google Access Token.
   // const credential = GoogleAuthProvider.credentialFromResult(result);
   // const token = credential.accessToken;
+};
+export const signUpWithEmailAndPasswordForm = async (auth, email, password) => {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  return userCredential; 
 };
 
 export default app;
