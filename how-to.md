@@ -29,3 +29,21 @@ npm start
     render() > updating DOM & refs by React
 - unmounting
   componentWillUnmount()
+
+  
+## setup Firebase
+[https://console.firebase.google.com]
+
+### config for web app
+[https://console.firebase.google.com/project/fir-app-99824/settings/general]
++'</>' 
+'Add Firebase to your web app'
+'(1) Register app'
+'App nickname'=demo_app > +'Register app'
+r'npm' > paste copied config in project
+npm i firebase
+
+## Authentication 
+- 'Authentication'
+|Sign-in method| 
+Enable Google
