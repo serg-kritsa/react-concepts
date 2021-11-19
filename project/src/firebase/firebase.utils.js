@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "",
@@ -26,6 +26,10 @@ export const signInWithGoogle = async () => {
 };
 export const signUpWithEmailAndPasswordForm = async (auth, email, password) => {
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  return userCredential; 
+};
+export const signInWithEmailAndPasswordForm = async (auth, email, password) => {
+  const userCredential = await signInWithEmailAndPassword(auth, email, password);
   return userCredential; 
 };
 
