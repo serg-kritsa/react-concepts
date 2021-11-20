@@ -58,3 +58,20 @@ link to docs
 
 ## React routing
 <Route path={} component={}> tag from `react-router-dom` always passes to component as props: match, location & history
+
+## Accept payments using Stripe in React
+npm i react-stripe-checkout@2.6.3
+
+### register
+https://dashboard.stripe.com/register
+sign in
+
+https://dashboard.stripe.com/test/dashboard > +'Developers' > +'API keys' > 
+    'API keys' > 'Standard keys' > copy secret key token
+left hand side column 
+
+### test card
+[https://stripe.com/docs/testing]
+[https://stripe.com/docs/testing#cards]
+NUMBER	            BRAND	CVC	            DATE
+4242424242424242	  Visa	Any 3 digits	  Any future date
