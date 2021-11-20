@@ -55,3 +55,6 @@ Enable Email/Password
 link to docs
 [https://redux.js.org/api/createstore]
 [https://redux.js.org/api/applymiddleware]
+
+## React routing
+<Route path={} component={}> tag from `react-router-dom` always passes to component as props: match, location & history
