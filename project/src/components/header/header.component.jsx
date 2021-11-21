@@ -14,7 +14,8 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.styles.scss';
 import {
   HeaderContainer,
-  LogoContainer
+  LogoContainer,
+  OptionsContainer
 } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
@@ -22,7 +23,7 @@ const Header = ({ currentUser, hidden }) => (
     <LogoContainer to='/'>
       <Logo  className='logo' />
     </LogoContainer>
-    <div className='options'>
+    <OptionsContainer>
       <Link className='option' to='/shop'>
         SHOP
       </Link>
@@ -39,7 +40,7 @@ const Header = ({ currentUser, hidden }) => (
         </Link>
       )}
       <CartIcon />
-    </div>
+    </OptionsContainer>
     {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
