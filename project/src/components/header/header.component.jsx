@@ -10,12 +10,12 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-import './header.styles.scss';
 import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLink
+  OptionLink,
+  OptionDiv
 } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
@@ -27,13 +27,13 @@ const Header = ({ currentUser, hidden }) => (
       <OptionLink to='/shop'>
         SHOP
       </OptionLink>
-      <div className='option'>
+      <OptionDiv>
         CONTACT
-      </div>
+      </OptionDiv>
       {currentUser ? (
-        <div className='option' onClick={() => auth.signOut()}>
+        <OptionDiv onClick={() => auth.signOut()}>
           SIGN OUT
-        </div>
+        </OptionDiv>
       ) : (
         <OptionLink to='/signin'>
           SIGN IN
