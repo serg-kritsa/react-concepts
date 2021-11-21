@@ -89,3 +89,10 @@ NUMBER	            BRAND	CVC	            DATE
 'Authorized domains' > +'Add domain' 
 'Domain'=`https://`<deployed-app-name>`.heroku.com` > +'Add'
 
+## Firestore
+[https://console.firebase.google.com/project/fir-app-99824/firestore]
+'Build' > 'Firestore Database' > +'Create database'
+r'Start in test mode' > +'Next'
+select location > +'Enable'
+### examples
+[https://firebase.google.com/docs/firestore/quickstart?hl=en&authuser=0]
