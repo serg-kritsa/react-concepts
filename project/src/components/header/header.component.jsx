@@ -15,7 +15,8 @@ import './header.styles.scss';
 import {
   HeaderContainer,
   LogoContainer,
-  OptionsContainer
+  OptionsContainer,
+  OptionLink
 } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
@@ -24,9 +25,9 @@ const Header = ({ currentUser, hidden }) => (
       <Logo  className='logo' />
     </LogoContainer>
     <OptionsContainer>
-      <Link className='option' to='/shop'>
+      <OptionLink to='/shop'>
         SHOP
-      </Link>
+      </OptionLink>
       <div className='option'>
         CONTACT
       </div>
@@ -35,9 +36,9 @@ const Header = ({ currentUser, hidden }) => (
           SIGN OUT
         </div>
       ) : (
-        <Link className='option' to='/signin'>
+        <OptionLink to='/signin'>
           SIGN IN
-        </Link>
+        </OptionLink>
       )}
       <CartIcon />
     </OptionsContainer>
