@@ -75,3 +75,17 @@ left hand side column
 [https://stripe.com/docs/testing#cards]
 NUMBER	            BRAND	CVC	            DATE
 4242424242424242	  Visa	Any 3 digits	  Any future date
+
+
+## host production version of react app 
+- `npm i heroku -g`
+[https://devcenter.heroku.com/articles/heroku-cli]
+- heroku create <deployed-app-name> --buildpack https://github.com/mars/create-react-app-buildpack.git
+  `git remote -v`
+- `git push heroku master`
+
+### firebase google auth from heroku
+- [https://console.firebase.google.com/project/fir-app-99824/authentication/providers]
+'Authorized domains' > +'Add domain' 
+'Domain'=`https://`<deployed-app-name>`.heroku.com` > +'Add'
+
