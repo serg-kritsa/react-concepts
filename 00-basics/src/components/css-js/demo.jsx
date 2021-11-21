@@ -24,7 +24,7 @@ export const Demo02 = () => (
     <Text> TEXT </Text>
   </div>
 );
-// passed prop
+// passed prop 
 const Text = styled.div`
   color: red;
   font-size: 24px;
