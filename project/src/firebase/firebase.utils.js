@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore } from "firebase/firestore"
+import { getFirestore, collection, getDocs } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "",
@@ -15,6 +15,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore();
+
+export const loadShopData = async () => {
+  let formattedCollection = {};
+  const querySnapshot = await getDocs(collection(db, 'collections'));
+  querySnapshot.forEach((doc) => {
+      const id = doc.id;
+      const { title, items } = doc.data();
+      const routeName = encodeURI(title.toLowerCase());
+      formattedCollection[routeName] = { id, routeName, title, items };
+  });
+  return formattedCollection;
+};
 
 export const auth = getAuth();
 const provider = new GoogleAuthProvider();

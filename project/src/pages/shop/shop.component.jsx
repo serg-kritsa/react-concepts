@@ -2,11 +2,14 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { loadShopData } from '../../firebase/firebase.utils.js';
+
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
 import CollectionPage from '../collection/collection.component';
 
 class ShopPage extends React.Component {
-  componentDidMount() {
+  componentDidMount = async () => {
+    const collections = await loadShopData();
   }
 
   render() {
