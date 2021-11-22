@@ -15,11 +15,10 @@ const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends React.Component {
-
-  componentDidMount = async () => {
+  componentDidMount() {
     const { fetchCollections } = this.props;
-    await fetchCollections();
 
+    fetchCollections();
   }
 
   render() {
