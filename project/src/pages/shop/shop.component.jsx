@@ -4,12 +4,17 @@ import { connect } from 'react-redux';
 
 import { loadShopData } from '../../firebase/firebase.utils.js';
 
+import { updateCollections } from '../../redux/shop/shop.actions';
+
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
 import CollectionPage from '../collection/collection.component';
 
 class ShopPage extends React.Component {
   componentDidMount = async () => {
+    const { updateCollections } = this.props;
+
     const collections = await loadShopData();
+    updateCollections(collections);
   }
 
   render() {
@@ -27,6 +32,8 @@ class ShopPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
+  updateCollections: (collectionsMap) =>
+    dispatch(updateCollections(collectionsMap))
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
