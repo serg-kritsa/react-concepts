@@ -4,6 +4,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './root-reducer';
+import myDemoSaga from './my-demo-saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,5 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
+
+sagaMiddleware.run(myDemoSaga); // 1) saga must be called
 
 export const persistor = persistStore(store);

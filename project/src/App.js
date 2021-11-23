@@ -27,6 +27,7 @@ class App extends React.Component {
       this.setState({ currentUser: user });
 
       console.log(user);
+      // ::: 2) saga is listening this action
       setCurrentUser(user);
     });
   }
