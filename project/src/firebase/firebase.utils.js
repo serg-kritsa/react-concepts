@@ -28,6 +28,15 @@ export const loadShopData = async () => {
   return formattedCollection;
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 export const auth = getAuth();
 const provider = new GoogleAuthProvider();
 provider.addScope('profile');
