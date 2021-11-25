@@ -96,3 +96,12 @@ r'Start in test mode' > +'Next'
 select location > +'Enable'
 ### examples
 [https://firebase.google.com/docs/firestore/quickstart?hl=en&authuser=0]
+
+
+
+## use saga effects
+take(action) - get action payload once
+takeEvery(action, callback) - listen every action
+takeLatest(action, callback)
+call - call method OR other saga
+put - dispatch action

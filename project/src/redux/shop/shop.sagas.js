@@ -1,15 +1,25 @@
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
+
+import { loadShopData } from '../../firebase/firebase.utils';
 
 import {
+  fetchCollectionsSuccess,
+  fetchCollectionsFailure
 } from './shop.actions';
 
 import ShopActionTypes from './shop.types';
 
 export function* fetchCollections() {
-  yield console.log(2);
+  try {
+    const collectionsMap = yield call(
+      loadShopData
+    );
+    yield put(fetchCollectionsSuccess(collectionsMap));
+  } catch (error) {
+    yield put(fetchCollectionsFailure(error.message));
+  }
 }
 
 export function* onFetchCollectionsStart() {
-  yield console.log(1);
   yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollections);
 }
