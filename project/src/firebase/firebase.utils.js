@@ -41,7 +41,7 @@ export const auth = getAuth();
 const provider = new GoogleAuthProvider();
 provider.addScope('profile');
 provider.addScope('email');
-export const signInWithGoogle = async () => {
+export const signInWithGooglePopup = async () => {
   const result = await signInWithPopup(auth, provider);
   // The signed-in user info.
   // const user = result.user;

@@ -10,13 +10,23 @@ import {
 } from './user.actions';
 
 import {
-  getCurrentUser
+  getCurrentUser,
+  signInWithGooglePopup
 } from '../../firebase/firebase.utils';
 
 export function* getSnapshotFromUserAuth(userAuth) {
   try {
     const userSnapshot = userAuth;
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot }));
+  } catch (error) {
+    yield put(signInFailure(error));
+  }
+}
+
+export function* signInWithGoogle() {
+  try {
+    const { user } = yield signInWithGooglePopup();
+    yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
   }
@@ -39,6 +49,10 @@ export function* signOut() {
   }
 }
 
+export function* onGoogleSignInStart() {
+  yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
+}
+
 export function* onCheckUserSession() {
   yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
 }
@@ -49,6 +63,7 @@ export function* onSignOutStart() {
 
 export function* userSagas() {
   yield all([
+    call(onGoogleSignInStart),
     call(onCheckUserSession),
     call(onSignOutStart)
   ]);
