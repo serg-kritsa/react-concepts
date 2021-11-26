@@ -13,6 +13,7 @@ import {
 
 import {
   auth,
+  signout,
   getCurrentUser,
   signInWithGooglePopup,
   signInWithEmailAndPasswordForm,
@@ -58,6 +59,7 @@ export function* isUserAuthenticated() {
 
 export function* signOut() {
   try {
+    yield signout(auth);
     yield put(signOutSuccess());
   } catch (error) {
     yield put(signOutFailure(error));
