@@ -9,6 +9,7 @@ const UseStateExample = () => {
 
   const [name, setName] = useState('Yihua');
   const [address, setAddress] = useState('Amsterdam');
+  const [value, setValue] = useState(''); // added w/ empty default value
 
   return (
     <Card>
