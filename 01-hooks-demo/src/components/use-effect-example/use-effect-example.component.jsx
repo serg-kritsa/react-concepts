@@ -4,7 +4,7 @@ import Card from '../card/card.component';
 
 const UseEffectExample = () => {
   const [user, setUser] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('Bret');
+  const [searchQuery, setSearchQuery] = useState('');
 
   // // 01 // // is fired when 1) componentDidMount 2) EVERY re-rendering
   // useEffect(() => {console.log('hello from useEffect');});
@@ -31,7 +31,10 @@ const UseEffectExample = () => {
       setUser(resJson[0]); // 1) after setting state value, component will be re-rendered
     };
 
-    fetchFunc();
+    if (searchQuery.length > 3) {
+      fetchFunc();
+    }
+
   // }, []); // 2) infinite re-rendering
   }, [searchQuery]); // 3) added watched prop for re-rendering component
 
