@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
@@ -9,10 +9,17 @@ import { signUpStart } from '../../redux/user/user.actions';
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp = ({signUpStart}) => {
+  const [userCredentials, setUserCredentials] = useState({
+    displayName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const { displayName, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = async event => {
     event.preventDefault();
-    const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
@@ -25,11 +32,10 @@ const SignUp = ({signUpStart}) => {
   const handleChange = event => {
     const { name, value } = event.target;
 
-    this.setState({ [name]: value });
+    setUserCredentials({ ...userCredentials, [name]: value });
   };
   
   render() {
-    const { displayName, email, password, confirmPassword } = this.state;
     return (
       <SignUpContainer>
         <SignUpTitle>I do not have a account</SignUpTitle>
