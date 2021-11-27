@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { connect } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
@@ -16,6 +16,8 @@ import {
 } from './sign-in.styles';
 
 const SignIn = ({emailSignInStart, googleSignInStart}) => {
+  const [userCredentials, setCredentials] = useState({email: '', password: ''});
+
   handleSubmit = async event => {
     event.preventDefault();
     const { emailSignInStart } = this.props;
