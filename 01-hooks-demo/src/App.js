@@ -8,6 +8,7 @@ import './App.css';
 const App = props => {
   return <UseStateExample />;
   // return <CustomHookExample />;
+  // return <UseReducerExample />
 };
 
 export default App;
