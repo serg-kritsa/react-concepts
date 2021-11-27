@@ -22,7 +22,7 @@ const SignUp = ({signUpStart}) => {
     signUpStart({ displayName, email, password });
   };
 
-  handleChange = event => {
+  const handleChange = event => {
     const { name, value } = event.target;
 
     this.setState({ [name]: value });
@@ -39,7 +39,7 @@ const SignUp = ({signUpStart}) => {
             type='text'
             name='displayName'
             value={displayName}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Display Name'
             required
           />
@@ -47,7 +47,7 @@ const SignUp = ({signUpStart}) => {
             type='email'
             name='email'
             value={email}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Email'
             required
           />
@@ -55,7 +55,7 @@ const SignUp = ({signUpStart}) => {
             type='password'
             name='password'
             value={password}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Password'
             required
           />
@@ -63,7 +63,7 @@ const SignUp = ({signUpStart}) => {
             type='password'
             name='confirmPassword'
             value={confirmPassword}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Confirm Password'
             required
           />
