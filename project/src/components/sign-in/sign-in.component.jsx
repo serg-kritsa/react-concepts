@@ -18,10 +18,9 @@ import {
 const SignIn = ({emailSignInStart, googleSignInStart}) => {
   const [userCredentials, setCredentials] = useState({email: '', password: ''});
 
+  const { email, password } = userCredentials;
   handleSubmit = async event => {
     event.preventDefault();
-    const { emailSignInStart } = this.props;
-    const { email, password } = this.state;
 
     emailSignInStart(email, password);
   };
@@ -29,7 +28,7 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
   handleChange = event => {
     const { value, name } = event.target;
 
-    this.setState({ [name]: value });
+    setCredentials({ ...userCredentials, [name]: value });
   };
 
   return (
@@ -42,14 +41,14 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
           name='email'
           type='email'
           handleChange={handleChange}
-          value={this.state.email}
+          value={email}
           label='email'
           required
         />
         <FormInput
           name='password'
           type='password'
-          value={this.state.password}
+          value={password}
           handleChange={this.handleChange}
           label='password'
           required
