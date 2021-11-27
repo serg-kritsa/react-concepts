@@ -19,13 +19,13 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
   const [userCredentials, setCredentials] = useState({email: '', password: ''});
 
   const { email, password } = userCredentials;
-  handleSubmit = async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     emailSignInStart(email, password);
   };
 
-  handleChange = event => {
+  const handleChange = event => {
     const { value, name } = event.target;
 
     setCredentials({ ...userCredentials, [name]: value });
@@ -49,7 +49,7 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
           name='password'
           type='password'
           value={password}
-          handleChange={this.handleChange}
+          handleChange={handleChange}
           label='password'
           required
         />
