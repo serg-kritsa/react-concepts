@@ -19,12 +19,13 @@ const App = ({ checkUserSession, currentUser }) => {
 
   useEffect(() => {
     checkUserSession();
+
+    return () => {
+      // code here will be executed like in componentWillUnmount lifecycle method
+      // unsubscribe from firestore snapshot here if needed
+    }
   // }, [])
   }, [checkUserSession])
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
 
     return (
       <div>
