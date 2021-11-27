@@ -10,7 +10,7 @@ import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp = ({signUpStart}) => {
 
-  handleSubmit = async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = this.state;
 
@@ -34,7 +34,7 @@ const SignUp = ({signUpStart}) => {
       <SignUpContainer>
         <SignUpTitle>I do not have a account</SignUpTitle>
         <span>Sign up with your email and password</span>
-        <form className='sign-up-form' onSubmit={this.handleSubmit}>
+        <form className='sign-up-form' onSubmit={handleSubmit}>
           <FormInput
             type='text'
             name='displayName'
