@@ -6,7 +6,12 @@ import CustomHookExample from './components/custom-hook-example/custom-hook-exam
 import './App.css';
 
 const App = props => {
-  return <UseStateExample />;
+  return (
+    <div>
+      <UseStateExample />
+    </div>
+  )
+  // return <UseStateExample />;
   // return <CustomHookExample />;
   // return <UseReducerExample />
 };
