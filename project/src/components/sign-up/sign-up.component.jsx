@@ -8,11 +8,10 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
-const SignUp = () => {
+const SignUp = ({signUpStart}) => {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const { signUpStart } = this.props;
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
