@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -17,9 +17,10 @@ import { checkUserSession } from './redux/user/user.actions';
 
 const App = ({ checkUserSession, currentUser }) => {
 
-  componentDidMount() {
+  useEffect(() => {
     checkUserSession();
-  }
+  // }, [])
+  }, [checkUserSession])
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
