@@ -138,3 +138,20 @@ componentWillReceiveProps(nextProps) {
 useEffect(() => {
   console.log('count changed', props.count);
 }, [props.count])
+
+[https://firebase.google.com/docs/firestore/security/rules-structure?hl=en]
+
+[https://console.firebase.google.com/project/fir-app-99824/firestore/rules]
+  Rules Playground
+
+[https://create-react-app.dev/docs/code-splitting/]
+
+## cover by tests
+https://github.com/sapegin/jest-cheat-sheet
+
+u - for update snapshot
+
+
+https://reactjs.org/docs/hooks-reference.html#usecontext
+
+npm test -- --coverage
