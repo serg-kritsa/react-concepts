@@ -1,0 +1,17 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // acces to document w/ own ID
+    match /users/{userId} {
+      // allow <-->: if <condition>;
+      allow get: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // all permissions to collection for specified user
+    // https://console.firebase.google.com/project/fir-app-99824/authentication/users
+    match /collections1/{collection} {
+      allow read;
+      allow write: if request.auth != null && request.auth.uid == 'authenticated user UID copied from ';
+    }
+  }
+}
