@@ -27,12 +27,6 @@ class App extends React.Component {
         <LanguageContext.Provider value={this.state.language}>
           <UserCreate />
         </LanguageContext.Provider>
-        <hr/>
-        <LanguageContext.Provider value="english">
-          <UserCreate />
-        </LanguageContext.Provider>
-        <hr/>
-        <UserCreate />      {/* default context value */}
       </div>
     );
   }
