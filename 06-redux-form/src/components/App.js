@@ -1,9 +1,13 @@
 import React from 'react';
+import StreamCreate from './streams/StreamCreate';
+// import StreamCreate from './streams/StreamCreate-00-basics';
 
-class App extends React.Component {
-  render() {
-    return <div className="ui container">App</div>;
-  }
-}
+const App = () => {
+  return (
+    <div className="ui container">
+      <StreamCreate />
+    </div>
+  );
+};
 
 export default App;
