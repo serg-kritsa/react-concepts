@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { asyncActionDemo } from '../../actions';
 
 class StreamCreate extends React.Component {
   renderError({ error, touched }) {
@@ -59,7 +61,12 @@ const validate = formValues => {
   return errors;
 };
 
-export default  reduxForm({
+const formWrapped = reduxForm({
   form: 'streamCreate',
   validate
 })(StreamCreate);
+
+export default connect(
+  null,
+  { asyncActionDemo }
+)(formWrapped);
