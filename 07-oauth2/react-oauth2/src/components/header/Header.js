@@ -11,6 +11,7 @@ const Header = () => {
         <div className="item">
           All Streams
         </div>
+        <GoogleAuth />
       </div>
     </div>
   );
