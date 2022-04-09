@@ -1,0 +1,12 @@
+
+const App = () => {
+  return (
+    <div className="ui container">
+      <div>
+        App
+      </div>
+    </div>
+  );
+};
+
+export default App;
