@@ -8,7 +8,7 @@ const Modal = props => {
         Message without styles
       </div>
     </div>,
-    document.querySelector('')
+    document.querySelector('#modal')
   );
 };
 
